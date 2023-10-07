@@ -1,0 +1,57 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0; /* Color de fondo general */
+    margin: 0;
+    padding: 0;
+}
+
+.card {
+    background-color: #fff; /* Fondo blanco para la card */
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 500px; /* Ancho máximo de la card */
+    margin: 20px auto; /* Centrar la card en la página */
+    padding: 20px;
+}
+
+h2 {
+    color: #333; /* Color del título */
+}
+
+/* Estilos para los botones */
+input[type="submit"],
+button.edit-btn {
+    background-color: #007BFF; /* Color de fondo azul para botones */
+    color: #fff; /* Color del texto de botones */
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+input[type="submit"]:hover,
+button.edit-btn:hover {
+    background-color: #0056b3; /* Cambio de color al pasar el ratón */
+}
+
+/* Estilo para el campo de fecha */
+input[type="date"] {
+    border: none; /* Quitamos el borde del campo de fecha */
+    padding: 5px;
+}
+
+/* Estilo para el campo de texto con borde transparente */
+input.no-border {
+    border: none;
+    background-color: transparent;
+    outline: none;
+}
+
+/* Estilo para el campo de texto con borde transparente al hacer foco */
+input.no-border:focus {
+    border: none;
+    background-color: transparent;
+    outline: none;
+}

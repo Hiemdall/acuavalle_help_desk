@@ -1,0 +1,22 @@
+Base de Datos: BD_acuavalle
+
+Tabla: tb_usuario
+
+Campos:
+
+id
+id_tickers 
+fecha
+correo_users
+nom_users
+solicitud
+nom_tec
+tipo_solicitud
+solucion 
+tiempo              => Tiempo en resulver el caso
+medio_solicitud
+departamento
+estado_solicitud
+
+
+
