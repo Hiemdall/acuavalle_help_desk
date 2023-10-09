@@ -10,9 +10,11 @@ $correo_users = $_POST['correo_users'];
 $nom_users = $_POST['nom_users'];
 $tipo_solicitud = $_POST['tipo_solicitud'];
 $solicitud = $_POST['solicitud'];
+$tiempo_inicio = $_POST['hora'];
+$serial = $_POST['serial'];
 $nom_tec = $_POST['nom_tec'];
 $solucion = $_POST['solucion'];
-$tiempo = $_POST['tiempo'];
+$tiempo_final = $_POST['tiempo_final'];
 $medio_solicitud = $_POST['medio_solicitud'];
 $departamento = $_POST['departamento'];
 $estado_solicitud = $_POST['estado_solicitud'];
@@ -22,8 +24,8 @@ $fechaConvertida = date('Y-m-d', strtotime($fecha));
 
 
 // Insertar datos en la base de datos
-$sql = "INSERT INTO tb_usuario (id_tickers, fecha, correo_users, nom_users, tipo_solicitud, solicitud, nom_tec, solucion, tiempo, medio_solicitud, departamento, estado_solicitud)
-VALUES ('$id_tickers', '$fechaConvertida', '$correo_users', '$nom_users', '$tipo_solicitud','$solicitud', '$nom_tec', '$solucion', '$tiempo', '$medio_solicitud', '$departamento', '$estado_solicitud')";
+$sql = "INSERT INTO tb_usuario (id_tickers, fecha, correo_users, nom_users, tipo_solicitud, solicitud, tiempo_inicio , serial, nom_tec, solucion , tiempo_final, medio_solicitud, departamento, estado_solicitud)
+VALUES ('$id_tickers', '$fechaConvertida', '$correo_users', '$nom_users', '$tipo_solicitud','$solicitud', '$tiempo_inicio', '$serial', '$nom_tec', '$solucion', '$tiempo_final', '$medio_solicitud', '$departamento', '$estado_solicitud')";
 
 if ($conn->query($sql) === TRUE) {
     echo "Solicitud enviada con éxito.";

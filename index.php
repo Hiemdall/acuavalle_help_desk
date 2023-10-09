@@ -14,7 +14,12 @@
         <label for="id_tickers">ID Tickers:</label>
         <input type="text" name="id_tickers" required><br><br>
         <?php
+        // Configura la zona horaria de Colombia
+        date_default_timezone_set('America/Bogota');
+        // Obtiene la fecha actual en formato 'd-m-Y'
         $fechaActual = date('d-m-Y');
+        // Obtiene la hora actual en formato 'H:i:s'
+        $horaActual = date('h:i:s A');
         ?>
         <label for="fecha">Fecha:</label>
         <input type="text" id="fecha" name="fecha" value="<?php echo $fechaActual; ?>" class="no-border" readonly style="border: none;  background-color: transparent; outline: none; ">
@@ -44,11 +49,17 @@
             <!-- Agrega más opciones según sea necesario -->
         </select><br><br>
 
+        <label for="tiempo_inicio">Tiempo Inicio:</label>
+        <input type="text" id="hora" name="hora" value="<?php echo $horaActual; ?>" class="no-border" readonly style="border: none; background-color: transparent; outline: none; ">
+
+        <label for="serial">Serial:</label>
+        <input type="text" name="serial" required><br><br>
+
         <label for="solucion">Solución:</label>
         <textarea name="solucion" rows="4" required></textarea><br><br>
 
-        <label for="tiempo">Tiempo (min):</label>
-        <input type="text" name="tiempo" required><br><br>
+        <label for="tiempo_final">Tiempo Final:</label>
+        <input type="text" name="tiempo_final"><br><br>
 
         <label for="medio_solicitud">Medio de Solicitud:</label>
         <select name="medio_solicitud" required>
@@ -78,5 +89,29 @@
         <input type="submit" value="Editar">
     </form>
   </div>
+  
+   <script>
+   //Función actualizar la hora en timpo real 
+    function actualizarHora() {
+    const campoHora = document.getElementById('hora');
+    const ahora = new Date();
+    let hora = ahora.getHours();
+    const minutos = ahora.getMinutes().toString().padStart(2, '0');
+    const segundos = ahora.getSeconds().toString().padStart(2, '0');
+    const ampm = hora >= 12 ? 'PM' : 'AM';
+
+    hora = hora % 12 || 12; // Convertir a formato de 12 horas
+
+    const horaActual = `${hora}:${minutos}:${segundos} ${ampm}`;
+    
+    campoHora.value = horaActual;
+}
+
+   // Actualizar la hora cada segundo (1000 milisegundos)
+   setInterval(actualizarHora, 1000);
+
+   // Llamar a la función para configurar la hora inicial
+actualizarHora();
+</script>
 </body>
 </html>
