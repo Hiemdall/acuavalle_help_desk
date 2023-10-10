@@ -13,9 +13,7 @@ solicitud
 nom_tec
 tipo_solicitud
 solucion 
-serial
-tiempo_inicio 
-tiempo_final            
+tiempo              => Tiempo en resulver el caso
 medio_solicitud
 departamento
 estado_solicitud
